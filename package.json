@@ -1,5 +1,5 @@
 {
-  "name": "rn-package-poc",
+  "name": "@brunohmagro/rn-package-poc",
   "version": "0.1.0",
   "description": "poc para git packages",
   "main": "lib/commonjs/index",
