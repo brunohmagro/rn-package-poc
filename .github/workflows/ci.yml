@@ -52,6 +52,9 @@ jobs:
     env:
       TURBO_CACHE_DIR: .turbo/android
     steps:
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -96,6 +99,9 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('example/android/gradle/wrapper/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+
+      - name: Make gradlew executable
+        run: cd example/android && chmod +x ./gradlew
 
       - name: Build example for Android
         run: |
